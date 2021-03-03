@@ -63,6 +63,24 @@ function draw(angleHour, angleMinute, angleSecond) {
   // clear canvas
   canvas.height = canvas.height;
 
+  // scale line
+  for (let i = 1; i <= 60; i++) {
+    if (i % 5 != 0) {
+      fillAndRotateRoundedRect(
+        3,
+        -30,
+        i * 6,
+        300 * factor,
+        "rgba(255, 255, 255, 0.3)"
+      );
+    } else {
+      positionText(i, 35, 285, 6, "white", "0");
+    }
+  }
+
+  // scale text
+  for (let i = 1; i <= 12; i++) positionText(i, 70, 220, 30, "white", " ");
+
   // circle large
   fillCircle(9, "white");
 
@@ -82,24 +100,6 @@ function draw(angleHour, angleMinute, angleSecond) {
 
   // circle small
   fillCircle(3, "black");
-
-  // scale line
-  for (let i = 1; i <= 60; i++) {
-    if (i % 5 != 0) {
-      fillAndRotateRoundedRect(
-        3,
-        -30,
-        i * 6,
-        300 * factor,
-        "rgba(255, 255, 255, 0.3)"
-      );
-    } else {
-      positionText(i, 35, 285, 6, "white", "0");
-    }
-  }
-
-  // scale text
-  for (let i = 1; i <= 12; i++) positionText(i, 70, 220, 30, "white", " ");
 }
 
 function animate() {
