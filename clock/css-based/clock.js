@@ -1,19 +1,11 @@
-function resize() {
-  function update() {
-    const width = Math.min(window.innerHeight, window.innerWidth);
-    clockElem.style.transform = `scale(${width / 2 / 320})`;
-  }
-  window.addEventListener("resize", update);
-}
-
 function rotate(elem, scale, factor) {
   elem.style.transform = `rotate(${(scale * factor) % 360}deg)`;
 }
 
 function position(elem, r, scale, factor) {
-  const radian = ((scale * factor) / 180) * Math.PI;
-  const dx = r * Math.sin(radian);
-  const dy = -r * Math.cos(radian);
+  const radians = ((scale * factor) / 180) * Math.PI;
+  const dx = r * Math.sin(radians);
+  const dy = -r * Math.cos(radians);
   elem.style = `left: ${dx}px; top: ${dy}px`;
 }
 
@@ -61,6 +53,16 @@ function animate() {
   rotate(hourElem, secondsPassedToday / 120, 1);
   rotate(minuteElem, secondsPassedToday / 10, 1);
   rotate(secondElem, secondsPassedToday, 6);
+}
+
+function resize() {
+  function update() {
+    const width = Math.min(window.innerHeight, window.innerWidth);
+    clockElem.style.transform = `scale(${width / 2 / 320})`;
+    animate();
+  }
+  update();
+  window.addEventListener("resize", update);
 }
 
 const clockElem = document.querySelector(".clock");
