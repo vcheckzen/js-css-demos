@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: grid;
+  place-items: center;
+}
+
+.clock {
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.large {
+  width: 20px;
+  height: 20px;
+  background: white;
+}
+
+.medium {
+  width: 14px;
+  height: 14px;
+  background: #fa9f22;
+}
+
+.small {
+  width: 7px;
+  height: 7px;
+  background: black;
+}
+
+.hour {
+  transform: rotate(300deg);
+}
+
+.thin {
+  width: 4px;
+  height: 32px;
+  background: white;
+  transform: translate(-50%, -100%);
+}
+
+.fat {
+  width: 16px;
+  height: 140px;
+  background: white;
+  border-radius: 8px;
+  transform: translate(-50%, calc(-100% - 30px));
+}
+
+.minute {
+  transform: rotate(270deg);
+}
+
+.minute .fat {
+  height: 235px;
+}
+
+.second .thin {
+  height: 370px;
+  background: #fa9f22;
+  transform: translate(-50%, calc(-100% + 70px));
+}
+
+.scale-line {
+  background: white;
+  height: 30px;
+  width: 3px;
+  opacity: 0.3;
+  transform: translate(-50%, -300px);
+}
+
+.scale-text {
+  color: white;
+  font-size: 35px;
+}
+
+.hour-text {
+  color: white;
+  font-size: 70px;
+}
+
+.hour-10 {
+  padding-left: 20px;
+}
