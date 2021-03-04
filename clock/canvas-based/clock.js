@@ -1,9 +1,9 @@
 function fillCircle(radius, color) {
   ctx.beginPath();
   ctx.arc(canvas.width / 2, canvas.height / 2, radius * factor, 0, 2 * Math.PI);
+  ctx.closePath();
   ctx.fillStyle = color;
   ctx.fill();
-  ctx.closePath();
 }
 
 function fillAndRotateRoundedRect(
@@ -34,8 +34,8 @@ function fillAndRotateRoundedRect(
     ctx.lineTo(left + width, top + height);
     ctx.arc(left + radius, top + height, radius, 0, Math.PI, true);
     ctx.lineTo(left, top);
-    ctx.fill();
     ctx.closePath();
+    ctx.fill();
   } else {
     ctx.fillRect(left, top, width, height);
   }
