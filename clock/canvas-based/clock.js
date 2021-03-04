@@ -7,11 +7,11 @@ function fillCircle(radius, color) {
 }
 
 function fillAndRotateRoundRect(width, height, angle, deltaY, color, rounded) {
-  const x = canvas.width / 2;
-  const y = canvas.height / 2;
   width *= factor;
   height *= factor;
   deltaY *= factor;
+  const x = canvas.width / 2;
+  const y = canvas.height / 2;
   const radius = width / 2;
   const left = x - radius;
   const top = y + radius + (deltaY ? deltaY : 0);
@@ -38,10 +38,10 @@ function fillAndRotateRoundRect(width, height, angle, deltaY, color, rounded) {
 }
 
 function positionText(text, fontSize, radius, angleUnit, color, prefix) {
-  const x = canvas.width / 2;
-  const y = canvas.height / 2;
   fontSize *= factor;
   radius *= factor;
+  const x = canvas.width / 2;
+  const y = canvas.height / 2;
   const radians = (text * angleUnit * Math.PI) / 180;
   const delta = 4;
   ctx.font = `${fontSize}px sans-serif`;
